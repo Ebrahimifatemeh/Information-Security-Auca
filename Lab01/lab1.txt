@@ -1,0 +1,17 @@
+Lab 1 – Comprehending UNIX Terminal Commands
+Name: Fatemeh Ebrahimi
+
+Steps performed:
+
+1. cd ~
+2. mkdir my_dir
+3. cd my_dir
+4. touch my_file.txt
+5. chmod 777 my_file.txt
+6. cat my_file.txt
+
+Result:
+- Directory created successfully
+- File created successfully
+- Permissions set to 777
+- File read successfully
