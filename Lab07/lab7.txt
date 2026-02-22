@@ -1,0 +1,47 @@
+Lab 7 – Crontab in Linux
+
+Key idea:
+Cron runs scheduled jobs based on rules in the user's crontab file.
+
+Crontab format:
+* * * * * command
+(min) (hour) (day of month) (month) (day of week)
+
+Useful commands:
+crontab -e  Edit crontab
+crontab -l  List jobs
+crontab -r  Remove crontab
+
+Special strings:
+@reboot, @hourly, @daily, @weekly, @monthly, @yearly
+
+Example job (from lab sheet):
+1) Create file:
+cd /home
+touch file.txt
+
+2) Script:
+nano write_line.sh
+#!/bin/bash
+echo "New line at $(date)" >> /home/file.txt
+
+3) Make executable:
+chmod +x /home/write_line.sh
+
+4) Cron job every minute:
+crontab -e
+* * * * * /home/write_line.sh
+
+5) Check output:
+cat /home/file.txt
+
+Task idea (python cron example):
+A cron job can run a python script that performs a safe automation, e.g. logging a status line
+or sending an admin notification (in a real Linux environment).
+Example:
+* * * * * /usr/bin/python3 /home/notify.py
+
+Alternative automation approaches:
+- systemd timers (Linux)
+- Cloud functions (AWS Lambda / Google Cloud Functions / Azure)
+- Windows Task Scheduler (Windows)
