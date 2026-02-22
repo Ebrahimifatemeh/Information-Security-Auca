@@ -1,0 +1,19 @@
+Editing Commands
+Command	Description
+u	Undo
+yy	Copy line
+p	Paste
+x	Delete character
+A	Insert at end of line
+Navigation Commands
+Command	Description
+gg	Go to start of file
+G	Go to end of file
+/text	Search for text
+n	Next search result
+Visual Mode
+Command	Description
+v	Visual mode
+V	Select full line
+d	Delete selection
+y	Copy selection
