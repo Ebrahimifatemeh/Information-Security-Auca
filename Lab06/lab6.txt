@@ -1,0 +1,22 @@
+Lab 6 – Permissions in Linux
+
+1. Create a file and view permissions
+touch file.txt
+ls -la
+
+2. Permission values
+r = 4
+w = 2
+x = 1
+
+3. Change permissions
+chmod 754 file.txt
+ls -la
+
+4. Permission denied occurs when access is not allowed
+
+5. Change owner and group (theoretical)
+chown changes file owner
+chgrp changes file group
+
+This lab is documented due to Windows environment.
