@@ -1,0 +1,87 @@
+Lab 5 – User Management in Linux
+
+Environment note:
+This lab is documented and simulated because the system is Windows (Git Bash).
+Commands are explained as they would be executed on a Linux system.
+
+--------------------------------------------------
+
+1. Creating a new user
+
+Command:
+sudo adduser user1
+
+Expected behavior:
+- The system asks for a password
+- Creates /home/user1
+- Adds user entry to /etc/passwd
+
+Verification:
+cat /etc/passwd
+
+Expected last line:
+user1:x:1001:1001:user1,,,:/home/user1:/bin/bash
+
+--------------------------------------------------
+
+2. Switching to the new user
+
+Command:
+su - user1
+
+Verification:
+whoami
+
+Expected output:
+user1
+
+--------------------------------------------------
+
+3. Modifying user information
+
+Command:
+chfn
+
+Verification:
+cat /etc/passwd
+
+--------------------------------------------------
+
+4. Deleting the user
+
+Terminate user session:
+pkill -KILL -u user1
+
+Delete user:
+deluser --remove-home --force user1
+
+Verification:
+cat /etc/passwd
+
+Expected:
+user1 no longer exists
+
+--------------------------------------------------
+
+5. Discovering user groups
+
+Command:
+groups
+or
+cat /etc/group
+
+--------------------------------------------------
+
+6. Creating a new group and adding a user
+
+Create group:
+sudo groupadd security_group
+
+Create user:
+sudo adduser user2
+
+Add user to group:
+sudo usermod -aG security_group user2
+
+Verification:
+groups user2
