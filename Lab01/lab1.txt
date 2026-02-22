@@ -1,17 +1,37 @@
-Lab 1 – Comprehending UNIX Terminal Commands
+Lab 1 – Comprehending UNIX terminal commands
 Name: Fatemeh Ebrahimi
+Course: Information Security
 
-Steps performed:
+Part A: Basic scenario commands (performed)
 
-1. cd ~
-2. mkdir my_dir
-3. cd my_dir
-4. touch my_file.txt
-5. chmod 777 my_file.txt
-6. cat my_file.txt
+1) cd ~
+2) mkdir my_dir
+3) cd my_dir
+4) touch my_file.txt
+5) chmod 777 my_file.txt
+6) cat my_file.txt
+7) cd ..
+8) mkdir another_dir
+Task requirement: move files instead of copying
+9) mv my_dir/* another_dir/
+10) cd another_dir
+11) ls
 
 Result:
-- Directory created successfully
-- File created successfully
-- Permissions set to 777
-- File read successfully
+- my_file.txt is now inside another_dir
+- another_dir contains: my_file.txt and lab1.txt
+
+Part B: Discovering Unix commands
+
+curl --help
+- shows all curl options and usage
+
+Examples of curl usage (from lab sheet):
+- curl https://jsonplaceholder.typicode.com/posts
+- curl -o filename.json https://jsonplaceholder.typicode.com/posts
+- curl -I https://jsonplaceholder.typicode.com/posts
+- curl -X POST -H "Content-Type: application/json" -d '{"title":"foo","body":"bar","userId":1}' https://jsonplaceholder.typicode.com/posts
+
+Task: discover tar command
+tar --help
+- tar is used to create and extract archives (e.g., .tar, .tar.gz)
